@@ -30,6 +30,7 @@ app.listen(process.env.PORT, ()=>{
 	console.log('Server is running');
 })
 
+app.get('/',(req,res) => { res.status(200).json('server is running')})
 app.post('/signin',signin.signinHandler(database,bcrypt))
 app.post('/signup',signup.signupHandler(database,bcrypt))
 app.put('/image',imageCounter.imageCounterHandler(database))
