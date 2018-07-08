@@ -10,12 +10,10 @@ const imageCounter = require ('./controllers/imageCounter');
 const clarifaiImageApi = require('./controllers/clarifaiImageApi')
 
 const database = knex({
-  client: 'postgres',
+  client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'jirachi56@',
-    database : 'face-recognition'
+    host : process.env.DATABASE_URL,
+    ssl:true
   }
 });
 
