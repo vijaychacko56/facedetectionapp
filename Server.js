@@ -26,7 +26,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.listen(3000, ()=>{
+app.listen(process.env.PORT, ()=>{
 	console.log('Server is running');
 })
 
